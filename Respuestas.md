@@ -50,7 +50,7 @@ Un algoritmo que prueba divisores hacia abajo costará un tiempo $O(\min(a, b))$
 ### c) Explique por qué pushBack puede ser amortizado $O(1)$, pero insert(0,x) no lo es bajo la misma representación.
 pushBack es insertar al final y solo requiere reasignar todo el arreglo de tamaño $n$ una vez cada $O(n)$ operaciones. Al promediarlo el costo es $O(1)$. Sin embargo, insert(0,x) (insertar al inicio) requiere un desplazamiento forzoso de $n$ elementos a la derecha en cada iteración, haya redimensionamiento o no, haciéndolo de tiempo $O(n)$.
 ### d) Indique un invariante que involucre _size, _capacity y posiciones válidas de _elem.
-Siempre cumple $0 \le \text{\_size} \le \text{\_capacity}$. Además, todos los índices $0 \le i < \text{\_size}$ en _elem contienen objetos lógicos válidos y _elem apunta a un bloque de memoria que aloja exactamente _capacity espacios (continuo).
+Siempre se cumple $0 \le \text{\_size} \le \text{\_capacity}$. Además, todos los índices $0 \le i < \text{\_size}$ en _elem contienen objetos lógicos válidos y _elem apunta a un bloque de memoria que aloja exactamente _capacity espacios (continuo).
 ### e) Proponga una política de expand/shrink y explique como afecta memoria desperdiciada y numero de copias.
 La política es hacer un expand duplicando la capacidad (_capacity * 2) cuando se agota los espacios libres; y hacer un shrink dividiéndolo entre 2 (_capacity / 2) solo cuando  _size <= _capacity / 4.
 ## Pregunta 4:
